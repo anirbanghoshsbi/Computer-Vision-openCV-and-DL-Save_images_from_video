@@ -12,7 +12,7 @@ output_path = '/home/guru/Desktop/video/'
 #invoke opencv to capture the video
 video_source = cv2.VideoCapture(video)
 count = 0
-# start looping to capture the image and its counter as <image> and <success> and while success is true
+# start looping to capture the image and its counter as <image> and <image_index> and while image_index is true
 # keep writing the images on disk using cv2.imwrite
 while video_source.isOpened():
 	image_index , image = video_source.read()
