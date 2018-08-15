@@ -15,11 +15,11 @@ count = 0
 # start looping to capture the image and its counter as <image> and <success> and while success is true
 # keep writing the images on disk using cv2.imwrite
 while video_source.isOpened():
-	success , image = video_source.read()
-	if success :
+	image_index , image = video_source.read()
+	if image_index :
 		cv2.imwrite(os.path.join(output_path ,'%d.png')  %count , image)
 		count +=1
 	else:
 		break #to greak out of the while loop once the image has fully been written on disk
-cv2.destroyAllWindows()
-video_source.release()	
+cv2.destroyAllWindows() #close all open windows if any
+video_source.release()	# closes the video source.
